@@ -1,2 +1,7 @@
-<% @server.checks.each do |check| %>
-<%=link_to   %>
+<h1>Hi <%= @server.name %>, here are your current tables:</h1> <br>
+    <% @server.checks.each do |check| %>
+    <p><%=link_to check.id, check_path(check) %><p> <br>
+<% end %>
+<br>
+<h2><%=link_to "New Table", checks_path, method: post%></h2>
+
