@@ -1,0 +1,7 @@
+<h4>Editing Check <%= "#{@check.id}" %></h4>
+
+<%= form_for(@check) do |f| %>
+    <%= f.collection_select :food_id, Food.all, :name, :name %>
+    <%= f.submit %>        
+<% end %>
+  
