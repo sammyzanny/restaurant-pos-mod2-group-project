@@ -5,6 +5,14 @@ class Check < ApplicationRecord
 
   def food_id=(food_id)
     food = Food.find_by(id: food_id)
+    self.foods << food
+  end
+
+  def food_id
+    results = []
+    self.foods.each do |food|
+      results << food_id
+    end
   end
   
 end
