@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Food.destroy_all
+Server.destroy_all
+Check.destroy_all
+
+Food.create(name: "Spaghetti", price: 14.99, food_type: "Pasta")
+Food.create(name: "Lasagna", price: 14.99, food_type: "Pasta")
+Food.create(name: "Chicken Parmesan", price: 16.99, food_type: "Chicken")
+Food.create(name: "3 Meatballs", price: 5.99, food_type: "Appetizer")
+Food.create(name: "Cheese Pizza Slice", price: 8.99, food_type: "Pizza")
+
+Server.create(name: "Steve")
+
+Check.create(paid_status: "Unpaid", server_id: Server.last)
