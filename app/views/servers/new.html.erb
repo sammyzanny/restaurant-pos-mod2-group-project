@@ -1,0 +1,15 @@
+<h1>New Server Sign Up</h1><br>
+
+<% if flash[:errors] %>
+    <%flash[:errors].each do |message| %>
+        Error: <%= message %> 
+    <% end %>
+<% end %>
+
+<%= form_for @server do |f| %>
+    <%=f.label :name, "New Server's Name:"  %>
+    <%=f.text_field :name %>
+    <%=f.label :pin, "Create a Pin Login:" %>
+    <%=f.number_field :pin, maxlength: 4 %>
+    <%=f.submit "Join Team" %>
+<% end %>
