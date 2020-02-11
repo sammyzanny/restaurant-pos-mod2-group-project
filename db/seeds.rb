@@ -16,6 +16,6 @@ Food.create(name: "Chicken Parmesan", price: 16.99, food_type: "Chicken")
 Food.create(name: "3 Meatballs", price: 5.99, food_type: "Appetizer")
 Food.create(name: "Cheese Pizza Slice", price: 8.99, food_type: "Pizza")
 
-Server.create(name: "Steve")
+Server.create(name: "Steve", pin: 1234)
 
 Check.create(paid_status: "Unpaid", server_id: Server.last)

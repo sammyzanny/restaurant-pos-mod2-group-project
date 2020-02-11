@@ -1,7 +1,11 @@
 <h1> Menu </h1>
 
-<% @foods.each do |food| %>
-<ul>
-    <%= link_to food.name, food_path(food) %>
-</ul>
-<% end %>
+<!-- how to get only one of these to render at a time -->
+
+<%= render 'appetizer' %>
+
+<%= render 'pasta' %>
+
+<%= render 'chicken' %>
+
+<%= render 'pizza' %>

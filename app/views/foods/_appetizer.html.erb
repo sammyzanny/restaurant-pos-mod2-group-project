@@ -1,0 +1,5 @@
+<% @foods.where(food_type: "Appetizer").each do |appetizer|  %>
+<ul>
+    <%= appetizer.name %>
+</ul>
+<% end %>

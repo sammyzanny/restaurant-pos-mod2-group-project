@@ -1,0 +1,8 @@
+<h3>All Checks</h3>
+
+<ul>
+    <% @checks.each do |check| %>
+        <li><%= link_to "#{check.id} - #{check.server.name}", check_path(check) %></li>
+    <% end %>
+        
+</ul>
