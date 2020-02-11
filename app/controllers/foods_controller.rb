@@ -1,9 +1,6 @@
 class FoodsController < ApplicationController
     def index
         @foods = Food.all
-    end
-
-    def show
-        @food = Food.find(params[:id])
+        @food_type = params[:food_type]
     end
 end
