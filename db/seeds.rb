@@ -41,3 +41,8 @@ Food.create(name: "Affogato", price: 5.99, food_type: "Dessert")
 Server.create(name: "Steve", pin: 1234)
 
 Check.create(paid_status: "Unpaid", server_id: Server.last.id)
+
+order = Order.create(check_id: Check.last.id, food_id: Food.last.id)
+
+Modification.create(note: "NO sugar", price: 0.0, order_id: Order.last.id)
+Modification.create(note: "Extra cheese", price: 0.50, order_id: Order.last.id)
