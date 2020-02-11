@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_220238) do
+ActiveRecord::Schema.define(version: 2020_02_11_144448) do
 
   create_table "checks", force: :cascade do |t|
-    t.string "paid_status"
+    t.string "paid_status", default: "unpaid"
     t.integer "server_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_220238) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "pin"
   end
 
   add_foreign_key "checks", "servers"
