@@ -1,5 +1,11 @@
 <h3>Check <%= "#{@check.id}" %></h3>
 
+<% @check.foods.each do |food| %>
+    <%= food.name %>............<%= food.price %><br>
+<% end %>
+<br>
+<br>
+
 <%= link_to "Add/Change Items", edit_check_path(@check) %><br><br>
 
 <%= link_to "Back to all checks", checks_path %>
