@@ -8,7 +8,7 @@ class ServersController < ApplicationController
         @server = Server.new(server_params)
         if @server.valid?
             @server.save
-            sessions[:server_id] = @server.id
+            session[:server_id] = @server.id
             return redirect_to server_path(@server)
         end
 

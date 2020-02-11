@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
     def hello
         if session[:server_id]
-            server = Server.find(session[:server_id])
-            return redirect_to server_path(server)
+            server = Server.find_by(id: session[:server_id])
+            if server
+                return redirect_to server_path(server)
+            end
         end
     end
 
@@ -18,7 +20,7 @@ class ApplicationController < ActionController::Base
     end
 
     def logout
-        sessions[:server_id] = nil
+        session[:server_id] = nil
         redirect_to controller: 'application', action: 'hello'
     end
 
@@ -30,6 +32,8 @@ class ApplicationController < ActionController::Base
     end
 
     def require_login
-        return head(:forbidden) unless session.include? :server_id
+        unless session.include? :server_id
+            return redirect_to '/' 
+        end
     end
 end
