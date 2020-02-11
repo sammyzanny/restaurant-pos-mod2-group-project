@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :servers
   resources :foods do
-    resources :modifications only: [:new, :create]
+    resources :modifications, only: [:new, :create]
   end
   resources :orders
   resources :checks
