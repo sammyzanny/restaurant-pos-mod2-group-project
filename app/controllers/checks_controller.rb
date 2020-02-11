@@ -9,7 +9,7 @@ class ChecksController < ApplicationController
     end
 
     def create
-        check = Check.create(server_id: 1) #change this to current server once able
+        check = Check.create(server_id: current_server.id)
         redirect_to check_path(check)
     end
 
