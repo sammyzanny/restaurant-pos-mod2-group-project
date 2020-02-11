@@ -18,15 +18,16 @@ class ApplicationController < ActionController::Base
     end
 
     def logout
-        session[:server_id] = nil
+        sessions[:server_id] = nil
         redirect_to controller: 'application', action: 'hello'
     end
+
+    
+    private
 
     def current_server
         Server.find(session[:server_id])
     end
-
-    private
 
     def require_login
         return head(:forbidden) unless session.include? :server_id
