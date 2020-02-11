@@ -1,0 +1,8 @@
+<h1>Please Enter Your Pin to Log in or Click the Button to Sign Up</h1>
+
+<%= form_tag controller: 'application', action: 'login' do%>
+<%= f.label :pin, "Pin Number:" %>
+<%= f.number_field :pin %>
+        
+<% end %>
+  

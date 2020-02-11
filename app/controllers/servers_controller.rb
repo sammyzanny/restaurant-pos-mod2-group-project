@@ -21,5 +21,9 @@ class ServersController < ApplicationController
         @server = Server.find(params[:id])
     end
 
+
+    def server_params
+        params.require(:server).permit(:name, :pin)
+    end
         
 end
