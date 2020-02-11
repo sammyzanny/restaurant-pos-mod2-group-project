@@ -5,6 +5,7 @@ class ChecksController < ApplicationController
     end
 
     def index
+        @checks = Check.all
     end
 
     def create
