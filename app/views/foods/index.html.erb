@@ -1,11 +1,37 @@
 <h1> Menu </h1>
 
-<!-- how to get only one of these to render at a time -->
+<%= form_tag foods_path, method: :get do %>
+    <%= hidden_field_tag :food_type, "appetizer" %>
+    <%= submit_tag "Appetizers" %>
+<% end %>
 
-<%= render 'appetizer' %>
+<%= form_tag foods_path, method: :get do %>
+    <%= hidden_field_tag :food_type, "pasta" %>
+    <%= submit_tag "Pastas" %>
+<% end %>
 
-<%= render 'pasta' %>
+<%= form_tag foods_path, method: :get do %>
+    <%= hidden_field_tag :food_type, "chicken" %>
+    <%= submit_tag "Chicken" %>
+<% end %>
 
-<%= render 'chicken' %>
+<%= form_tag foods_path, method: :get do %>
+    <%= hidden_field_tag :food_type, "pizza" %>
+    <%= submit_tag "Pizza" %>
+<% end %>
 
-<%= render 'pizza' %>
+<% case @food_type %>
+<% when 'appetizer' %>
+    <%= render 'appetizer' %>
+<% when 'pasta' %> 
+    <%= render 'pasta' %>
+<% when 'chicken' %>
+    <%= render 'chicken' %>
+<% when 'pizza' %>
+    <%= render 'pizza' %>
+<% else %>
+    <%= render 'appetizer' %>
+    <%= render 'pasta' %>
+    <%= render 'chicken' %>
+    <%= render 'pizza' %>
+<% end %>
