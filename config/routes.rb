@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
   resources :orders
   resources :checks
+  get '/session_check/:id', to: 'checks#session_check', as: 'session_check'
 
   get '/', to: 'application#hello'
   post '/login', to: 'application#login'
