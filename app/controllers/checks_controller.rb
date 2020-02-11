@@ -17,6 +17,11 @@ class ChecksController < ApplicationController
         set_check
     end
 
+    def session_check
+        session[:check_to_edit] = Check.find(params[:id])
+        redirect_to foods_path
+    end
+
     def update
         set_check
         @check.update(check_params)

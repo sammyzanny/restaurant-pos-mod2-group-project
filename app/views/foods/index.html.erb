@@ -1,3 +1,8 @@
+<% if session[:check_to_edit] %>
+    <h2>Editing Check #<%= session[:check_to_edit]['id'] %></h2>
+<% end %>
+
+
 <h3> Filter by Food Type </h3>
 
 <%= form_tag foods_path, method: :get do %>
