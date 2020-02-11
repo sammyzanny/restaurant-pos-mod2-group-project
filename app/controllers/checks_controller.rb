@@ -9,7 +9,7 @@ class ChecksController < ApplicationController
     end
 
     def create
-        check = Check.create(server_id: 1)
+        check = Check.create(server_id: 1) #change this to current server once able
         redirect_to check_path(check)
     end
 
@@ -18,11 +18,18 @@ class ChecksController < ApplicationController
     end
 
     def update
+        set_check
+        @check.update(check_params)
+        redirect_to check_path(@check)
     end
 
     private
 
     def set_check
         @check = Check.find_by(id: params[:id])
+    end
+
+    def check_params
+        params.require(:check).permit(:food_id)
     end
 end
