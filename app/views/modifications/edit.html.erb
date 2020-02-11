@@ -1,0 +1,11 @@
+<h1>Edit Foods Page</h1>
+
+<h3>Current selected food is <%= @food.name %>. It costs $<%= @food.price %>.</h3>
+
+<%= form_for @modification do |f| %>
+  <%= f.label  :note %>
+  <%= f.text_field :note %>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <%= f.submit %>
+<% end  %>
