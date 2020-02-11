@@ -3,7 +3,7 @@
     <p><%=link_to check.id, check_path(check) %><p> <br>
 <% end %>
 <br>
-<h2><%=link_to "New Table", checks_path, method: post%></h2>
+<h2><%=link_to "New Table", checks_path, method: :post%></h2>
 <br><br>
-<%=link_to "Sign Out", log_out_path  %>
+<%=link_to "Sign Out", logout_path  %>
 

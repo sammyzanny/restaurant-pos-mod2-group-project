@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/', to: 'application#hello'
   post '/login', to: 'application#login'
-  get '/logout', to: 'application#logout'
+  get '/logout', to: 'application#logout', as: 'logout'
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
