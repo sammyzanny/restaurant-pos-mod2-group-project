@@ -1,0 +1,7 @@
+<h1> Menu </h1>
+
+<% @foods.each do |food| %>
+<ul>
+    <%= link_to food.name, food_path(food) %>
+</ul>
+<% end %>
