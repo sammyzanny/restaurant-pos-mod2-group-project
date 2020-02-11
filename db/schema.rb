@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_144448) do
+ActiveRecord::Schema.define(version: 2020_02_11_191347) do
 
   create_table "checks", force: :cascade do |t|
     t.string "paid_status", default: "unpaid"
@@ -24,13 +24,6 @@ ActiveRecord::Schema.define(version: 2020_02_11_144448) do
     t.string "name"
     t.decimal "price", precision: 8, scale: 2
     t.string "food_type"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "modifications", force: :cascade do |t|
-    t.text "note"
-    t.decimal "price", precision: 8, scale: 2, default: "0.0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

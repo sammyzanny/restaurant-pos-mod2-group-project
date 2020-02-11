@@ -12,8 +12,9 @@ class Check < ApplicationRecord
   def food_id
     results = []
     self.foods.each do |food|
-      results << food_id
+      results << food.id
     end
+    results
   end
   
   def total

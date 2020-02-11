@@ -18,4 +18,4 @@ Food.create(name: "Cheese Pizza Slice", price: 8.99, food_type: "Pizza")
 
 Server.create(name: "Steve", pin: 1234)
 
-Check.create(paid_status: "Unpaid", server_id: Server.last)
+Check.create(paid_status: "Unpaid", server_id: Server.last.id)
