@@ -11,8 +11,8 @@
 <% end %>
 
 <%= form_tag foods_path, method: :get do %>
-    <%= hidden_field_tag :food_type, "chicken" %>
-    <%= submit_tag "Chicken" %>
+    <%= hidden_field_tag :food_type, "entree" %>
+    <%= submit_tag "Entrees" %>
 <% end %>
 
 <%= form_tag foods_path, method: :get do %>
@@ -20,18 +20,30 @@
     <%= submit_tag "Pizza" %>
 <% end %>
 
+<%= form_tag foods_path, method: :get do %>
+    <%= hidden_field_tag :food_type, "dessert" %>
+    <%= submit_tag "Desserts" %>
+<% end %>
+
+<%= form_tag foods_path, method: :get do %>
+    <%= submit_tag "All Menu Items" %>
+<% end %>
+
 <% case @food_type %>
 <% when 'appetizer' %>
     <%= render 'appetizer' %>
 <% when 'pasta' %> 
     <%= render 'pasta' %>
-<% when 'chicken' %>
-    <%= render 'chicken' %>
+<% when 'entree' %>
+    <%= render 'entree' %>
 <% when 'pizza' %>
     <%= render 'pizza' %>
+<% when 'dessert' %>
+    <%= render 'dessert' %>
 <% else %>
     <%= render 'appetizer' %>
     <%= render 'pasta' %>
-    <%= render 'chicken' %>
+    <%= render 'entree' %>
     <%= render 'pizza' %>
+    <%= render 'dessert' %>
 <% end %>
