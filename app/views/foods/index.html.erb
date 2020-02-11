@@ -1,4 +1,4 @@
-<h1> Menu </h1>
+<h3> Filter by Food Type </h3>
 
 <%= form_tag foods_path, method: :get do %>
     <%= hidden_field_tag :food_type, "appetizer" %>
@@ -28,6 +28,8 @@
 <%= form_tag foods_path, method: :get do %>
     <%= submit_tag "All Menu Items" %>
 <% end %>
+
+<h3>Menu Items</h3>
 
 <% case @food_type %>
 <% when 'appetizer' %>
