@@ -1,5 +1,5 @@
 class AddFoodIdToModifications < ActiveRecord::Migration[6.0]
   def change
-    add_column :modifications, :food, :belongs_to
+    add_column :modifications, :food_id, :integer
   end
 end
