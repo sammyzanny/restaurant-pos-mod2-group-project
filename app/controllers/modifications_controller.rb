@@ -3,7 +3,8 @@ class ModificationsController < ApplicationController
   def new
     @modification = Modification.new
     @orders = Order.all
-    @mod_prices = [0.00, 0.50, 1.00, 1.50, 2.00, 2.50, 3.00, 4.00, 5.00]
+    @mod_prices = [0.00, 0.50, 1.00, 1.50, 2.00, 2.50, 3.00, 4.00, 5.00].map {|num| '%.2f' % num}
+
   end
 
   def edit
