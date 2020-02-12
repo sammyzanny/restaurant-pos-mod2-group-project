@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     def hello
+        @message = flash[:no_user_message]
         if session[:server_id]
             server = Server.find_by(id: session[:server_id])
             if server
@@ -14,7 +15,7 @@ class ApplicationController < ActionController::Base
             session[:server_id] = @server.id 
             return redirect_to server_path(@server)
         end
-
+        flash[:no_user_message] = "Invalid PIN"
         redirect_to controller: 'application', action: 'hello'
 
     end

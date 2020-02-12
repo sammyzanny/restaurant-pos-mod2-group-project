@@ -1,9 +1,9 @@
 <h1>Create a new modification</h1>
 
 <%= form_tag order_modifications_path do %>
-  <label>Note:</label>
-  <input type="text" id="modification_note" name="modification[note]">
-    
-  <label>Price:</label><br>
-  <input type="submit" value="Add Modification">
+  <%= hidden_field_tag "modification[order_id]", params[:order_id] %>
+  <%= label_tag "note", "Note"%>
+  <%= text_field_tag "modification[note]", @modification.note %>
+    <%= select_tag "modification[price]", options_for_select(@mod_prices, 0) %>
+  <%= submit_tag "Add Modification" %>
 <% end %>

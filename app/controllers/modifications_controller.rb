@@ -13,7 +13,7 @@ class ModificationsController < ApplicationController
   def create
     @modification = Modification.new(modification_params)
     @modification.save
-    redirect_to order_path(@modification.order_id)
+    redirect_to check_path(@modification.check)
   end
 
   private
