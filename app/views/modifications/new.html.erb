@@ -1,10 +1,9 @@
 <h1>Create a new modification</h1>
 
-<%= form_for @modification do |f| %>
-  <%= f.collection_select(:order_id, @orders, :id, :id) %>
-  <%= f.label  :note %>
-  <%= f.text_field :note %>
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <%= f.submit %>
-<% end  %>
+<%= form_tag order_modifications_path do %>
+  <label>Note:</label>
+  <input type="text" id="modification_note" name="modification[note]">
+    
+  <label>Price:</label><br>
+  <input type="submit" value="Add Modification">
+<% end %>

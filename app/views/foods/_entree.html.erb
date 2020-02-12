@@ -2,7 +2,7 @@
 <ul>
 <% @foods.where(food_type: "Entree").each do |entree|  %>
 <li>
-    <%= entree.name %> - <%= entree.price %><br><br>
+    <%= entree.name %> - $<%= entree.price %><br><br>
 </li>
 <% end %>
 </ul>
