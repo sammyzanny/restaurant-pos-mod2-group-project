@@ -26,7 +26,7 @@ Total............$<%= @check.total %><br><br><br>
    <h1 align="center"><a href=<%=payment_path(@check)%>><button style="font-size : 25px;">Pay Check</button></a></h1>
     <%# link_to "Pay Check", payment_path(@check) %>
 <% else %>
-   <a href=<%=refund_path(@check)%>><button>Refund Check</button></a>
+   <h1 align="center"><a href=<%=refund_path(@check)%>><button style="font-size : 25px;">Refund Check</button></a></h1>
     <%# link_to "Refund Check", refund_path(@check) %>
 <% end %>
 
