@@ -1,9 +1,5 @@
 <h4>Editing Check <%= "#{@check.id}" %></h4>
 
-<%= link_to "Add Item", session_check_path(@check) %><br><br>
+<%= link_to "Add Item", add_item_path(@check) %><br><br>
 
-<%= form_for(@check) do |f| %>
-    <%= f.collection_select :food_id, Food.all, :id, :name %>
-    <%= f.submit %>        
-<% end %>
-  
+<%= link_to "Back to Check", check_path(@check) %>
