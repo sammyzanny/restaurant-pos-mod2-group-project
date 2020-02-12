@@ -36,6 +36,11 @@ class Check < ApplicationRecord
     @tax_rate*total
   end
 
+  def total_after_tax
+    total += tax
+  end
+
+  
   def pay_check
     self.paid_status = "paid"
     self.save
@@ -46,6 +51,7 @@ class Check < ApplicationRecord
     self.paid_status = "refunded"
     self.save
   end
+
 
   
 
