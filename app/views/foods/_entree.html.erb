@@ -1,5 +1,8 @@
-<% @foods.where(food_type: "Entree").each do |entree|  %>
+<h4>Entrees</h4>
 <ul>
-    <%= entree.name %>
-</ul>
+<% @foods.where(food_type: "Entree").each do |entree|  %>
+<li>
+    <%= entree.name %> - <%= entree.price %><br><br>
+</li>
 <% end %>
+</ul>
