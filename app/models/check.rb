@@ -16,17 +16,17 @@ class Check < ApplicationRecord
     end
     results
   end
-  
+
   def total
     food_prices = self.foods.map{|food| food.price}
-    mod_prices = self.modifications.map{|mod| mod.price}
+    # mod_prices = self.modifications.map{|mod| mod.price}
     if food_prices.reduce(:+) == nil
       food_prices = [0]
     end
-    if mod_prices.reduce(:+) == nil
-      mod_prices = [0]
-    end
-    food_prices.reduce(:+) + mod_prices.reduce(:+)
+    # if mod_prices.reduce(:+) == nil
+    #   mod_prices = [0]
+    # end
+    food_prices.reduce(:+)# + mod_prices.reduce(:+)
   end
-  
+
 end

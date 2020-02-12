@@ -1,8 +1,7 @@
-<h1>Edit Modifications Page</h1>
-
-<h3>Current selected food is <%= @modification.note %>. It costs $<%= @modification.price %>.</h3>
+<h1>Create a new modification</h1>
 
 <%= form_for @modification do |f| %>
+  <%= f.collection_select(:order_id, @orders, :id, :id) %>
   <%= f.label  :note %>
   <%= f.text_field :note %>
   <%= f.label :price %>
