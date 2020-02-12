@@ -2,7 +2,7 @@
 
 <% @check.orders.each do |order| %>
 
-    <%= order.food.name %>............$<%= order.food.price %> - <%= link_to "Modify?", new_order_modification_path(order.id) %> - <%= link_to 'Remove Item',  order,  method: :delete %><br>
+    <%= order.food.name %>............$<%= order.food.price %> - <%= link_to "Add modification", new_order_modification_path(order.id) %> - <%= link_to 'Remove Item',  order,  method: :delete %><br>
     <% if order.modifications.any? %>
       <ul>
       <% order.modifications.each do |m| %>
