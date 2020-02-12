@@ -18,13 +18,15 @@ Total............$<%= @check.total %><br><br><br>
 
 <a href=<%=add_item_path(@check)%>><button>Add/Change Items</button></a><br><br>
 
-<a href=<%=check_path(@check)%>><button>Back to your Checks</button></a>
+<a href=<%=server_path(@check.server)%>><button>Back to your Checks</button></a>                          
 
 
 
 <% if @check.paid_status != "paid" %>
-    <h3><%= link_to "Pay Check", payment_path(@check) %></h3>
+   <h1 align="center"><a href=<%=payment_path(@check)%>><button style="font-size : 25px;">Pay Check</button></a></h1>
+    <%# link_to "Pay Check", payment_path(@check) %>
 <% else %>
-    <h3><%= link_to "Refund Check", refund_path(@check) %></h3>
+   <h1 align="center"><a href=<%=refund_path(@check)%>><button style="font-size : 25px;">Refund Check</button></a></h1>
+    <%# link_to "Refund Check", refund_path(@check) %>
 <% end %>
 
