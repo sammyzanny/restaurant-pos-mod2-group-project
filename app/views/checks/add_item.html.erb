@@ -1,0 +1,60 @@
+<% if session[:check_to_edit] %>
+    <h2>Editing Check #<%= session[:check_to_edit]['id'] %></h2>
+<% end %>
+
+
+<h3> Filter by Food Type </h3>
+
+<%= form_tag foods_path, method: :get do %>
+    <%= hidden_field_tag :food_type, "appetizer" %>
+    <%= submit_tag "Appetizers" %>
+<% end %>
+
+<%= form_tag foods_path, method: :get do %>
+    <%= hidden_field_tag :food_type, "pasta" %>
+    <%= submit_tag "Pastas" %>
+<% end %>
+
+<%= form_tag foods_path, method: :get do %>
+    <%= hidden_field_tag :food_type, "entree" %>
+    <%= submit_tag "Entrees" %>
+<% end %>
+
+<%= form_tag foods_path, method: :get do %>
+    <%= hidden_field_tag :food_type, "pizza" %>
+    <%= submit_tag "Pizza" %>
+<% end %>
+
+<%= form_tag foods_path, method: :get do %>
+    <%= hidden_field_tag :food_type, "dessert" %>
+    <%= submit_tag "Desserts" %>
+<% end %>
+
+<%= form_tag foods_path, method: :get do %>
+    <%= submit_tag "All Menu Items" %>
+<% end %>
+
+<h3>Menu Items</h3>
+
+<%= flash[:food_id] %>
+
+<% case @food_type %>
+<% when 'appetizer' %>
+    <%= render 'appetizer' %>
+<% when 'pasta' %> 
+    <%= render 'pasta' %>
+<% when 'entree' %>
+    <%= render 'entree' %>
+<% when 'pizza' %>
+    <%= render 'pizza' %>
+<% when 'dessert' %>
+    <%= render 'dessert' %>
+<% else %>
+    <%= render 'appetizer' %>
+    <%= render 'pasta' %>
+    <%= render 'entree' %>
+    <%= render 'pizza' %>
+    <%= render 'dessert' %>
+<% end %>
+
+<%= link_to "Back to Check", check_path(@check) %>

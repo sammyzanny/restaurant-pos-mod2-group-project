@@ -1,0 +1,11 @@
+<% @foods.where(food_type: "Entree").each do |food|  %>
+
+    
+    <%= form_tag item_added_path(@check) do %>
+    <%= hidden_field_tag :food_id, food.id %>
+    <%= submit_tag "#{food.name}" %>
+    <% end %>
+    
+    
+    <br>
+<% end %>
