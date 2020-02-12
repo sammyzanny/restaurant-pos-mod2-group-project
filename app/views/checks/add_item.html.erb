@@ -5,38 +5,40 @@
 
 <h3> Filter by Food Type </h3>
 
-<%= form_tag foods_path, method: :get do %>
+<%= form_tag add_item_path(@check), method: :get do %>
     <%= hidden_field_tag :food_type, "appetizer" %>
     <%= submit_tag "Appetizers" %>
 <% end %>
 
-<%= form_tag foods_path, method: :get do %>
+<%= form_tag add_item_path(@check), method: :get do %>
     <%= hidden_field_tag :food_type, "pasta" %>
     <%= submit_tag "Pastas" %>
 <% end %>
 
-<%= form_tag foods_path, method: :get do %>
+<%= form_tag add_item_path(@check), method: :get do %>
     <%= hidden_field_tag :food_type, "entree" %>
     <%= submit_tag "Entrees" %>
 <% end %>
 
-<%= form_tag foods_path, method: :get do %>
+<%= form_tag add_item_path(@check), method: :get do %>
     <%= hidden_field_tag :food_type, "pizza" %>
     <%= submit_tag "Pizza" %>
 <% end %>
 
-<%= form_tag foods_path, method: :get do %>
+<%= form_tag add_item_path(@check), method: :get do %>
     <%= hidden_field_tag :food_type, "dessert" %>
     <%= submit_tag "Desserts" %>
 <% end %>
 
-<%= form_tag foods_path, method: :get do %>
+<%= form_tag add_item_path(@check), method: :get do %>
     <%= submit_tag "All Menu Items" %>
 <% end %>
+<br>
+<a href=<%=check_path(@check)%>><button>Back to Check</button></a>
+<br>
+<h1>Menu Items</h1>
 
-<h3>Menu Items</h3>
 
-<%= flash[:food_id] %>
 
 <% case @food_type %>
 <% when 'appetizer' %>
@@ -56,5 +58,3 @@
     <%= render 'pizza' %>
     <%= render 'dessert' %>
 <% end %>
-
-<%= link_to "Back to Check", check_path(@check) %>

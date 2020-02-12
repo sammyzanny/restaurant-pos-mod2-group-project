@@ -18,18 +18,30 @@ class ChecksController < ApplicationController
     end
 
     def add_item
-        @check = Check.find_by(id: params[:id])
+        set_check
         @foods = Food.all
         @food_type = params[:food_type] 
     end
 
     def item_added
-        @check = Check.find_by(id: params[:id])
+        set_check
         if params[:food_id]
             @check.foods << Food.find_by(id: params[:food_id])
             @check.save
         end
         redirect_to add_item_path(@check)
+    end
+
+    def payment
+        set_check
+        @check.pay_check
+        redirect_to check_path(@check)
+    end
+
+    def refund
+        set_check
+        @check.refund_check
+        redirect_to check_path(@check)
     end
 
     def session_check

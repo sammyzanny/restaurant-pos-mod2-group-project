@@ -1,6 +1,7 @@
 <h3>Check <%= "#{@check.id}" %></h3>
 
 <% @check.orders.each do |order| %>
+
     <%= order.food.name %>............$<%= order.food.price %> - <%= link_to "Modify?", new_order_modification_path(order.id) %> - <%= link_to 'Remove Item',  order,  method: :delete %><br>
     <% if order.modifications.any? %>
       <ul>
@@ -10,10 +11,20 @@
       </ul>
     <% end %>
 <% end %>
+
 <br>
 <br>
-Total............$<%= @check.total %><br><br>
+Total............$<%= @check.total %><br><br><br>
 
-<%= link_to "Add/Change Items", edit_check_path(@check) %><br><br>
+<a href=<%=add_item_path(@check)%>><button>Add/Change Items</button></a><br><br>
 
-<%= link_to "Back to your checks", server_path(@check.server) %>
+<a href=<%=check_path(@check)%>><button>Back to your Checks</button></a>
+
+
+
+<% if @check.paid_status != "paid" %>
+    <h3><%= link_to "Pay Check", payment_path(@check) %></h3>
+<% else %>
+    <h3><%= link_to "Refund Check", refund_path(@check) %></h3>
+<% end %>
+

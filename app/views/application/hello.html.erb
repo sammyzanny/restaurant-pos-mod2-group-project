@@ -1,5 +1,9 @@
 <h1>Please Enter Your Pin to Log in or Click the Button to Sign Up</h1>
 
+<% if @message %>
+    <%= @message %><br><br>
+<% end %>
+    
 <%= form_tag controller: 'application', action: 'login' do%>
     <%= label_tag :pin, "Pin Number:" %>
     <%= number_field_tag :pin, maxlength: 4 %>
