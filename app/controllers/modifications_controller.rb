@@ -16,6 +16,14 @@ class ModificationsController < ApplicationController
     redirect_to check_path(@modification.check)
   end
 
+  def destroy
+    @mod = Modification.find_by(id: params[:id])
+    @check = @mod.order.check
+    @mod.destroy
+    # byebug
+    redirect_to check_path(@check)
+  end
+
   private
 
   def modification_params

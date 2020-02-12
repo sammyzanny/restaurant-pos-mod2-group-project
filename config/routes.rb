@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :foods
 
   resources :orders do
-    resources :modifications, only: [:new, :create, :index, :show]
+    resources :modifications, only: [:new, :create, :index, :show, :destroy]
   end
 
 

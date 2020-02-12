@@ -6,7 +6,7 @@
     <% if order.modifications.any? %>
       <ul>
       <% order.modifications.each do |m| %>
-        <li><%= m.note %>............$<%= m.price %></li>
+        <li><%= m.note %>............$<%= m.price %> - <%= link_to 'Remove Modifier',  order_modification_path(order, m),  method: :delete %></li>
           <% end %>
       </ul>
     <% end %>
@@ -23,8 +23,7 @@ Total............$<%= @check.total %><br><br><br>
 
 
 <% if @check.paid_status != "paid" %>
-    <h3><%= link_to "Pay Check", payment_path(@check) %></h3>
+    <h3><%= link_to "Pay Check", payment_path(@check), data: { confirm: "Charge customer $#{@check.total}?" } %></h3>
 <% else %>
-    <h3><%= link_to "Refund Check", refund_path(@check) %></h3>
+    <h3><%= link_to "Refund Check", refund_path(@check), data: { confirm: "Please have a manager confirm the refund before proceeding" } %></h3>
 <% end %>
-
