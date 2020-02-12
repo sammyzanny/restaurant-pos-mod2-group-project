@@ -2,7 +2,7 @@
 <ul>
 <% @foods.where(food_type: "Appetizer").each do |appetizer|  %>
 <li>
-    <%= appetizer.name %> - $<%= appetizer.price %><br><br>
+    <%= appetizer.name %> - <%=number_to_currency(appetizer.price, unit: '$') %><br><br>
 </li>
 <% end %>
 </ul>
