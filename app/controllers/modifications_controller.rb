@@ -3,6 +3,7 @@ class ModificationsController < ApplicationController
   def new
     @modification = Modification.new
     @orders = Order.all
+    @mod_prices = [0.00, 0.50, 1.00, 1.50, 2.00, 2.50]
   end
 
   def edit
@@ -12,7 +13,7 @@ class ModificationsController < ApplicationController
   def create
     @modification = Modification.new(modification_params)
     @modification.save
-    redirect_to order_path(@modification.order_id)
+    redirect_to check_path(@modification.check)
   end
 
   private
