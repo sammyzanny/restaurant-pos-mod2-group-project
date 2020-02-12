@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   resources :orders do
     resources :modifications, only: [:new, :create, :index, :show]
   end
-
-
+  
   resources :checks
   get '/session_check/:id', to: 'checks#session_check', as: 'session_check'
   get '/add_item/:id', to: 'checks#add_item', as: 'add_item'
