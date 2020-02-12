@@ -21,8 +21,6 @@ class ChecksController < ApplicationController
         @check = Check.find_by(id: params[:id])
         @foods = Food.all
         @food_type = params[:food_type] 
-        # p params
-        # p "********************************************************************"
     end
 
     def item_added

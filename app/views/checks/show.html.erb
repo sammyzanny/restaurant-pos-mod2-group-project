@@ -1,7 +1,7 @@
 <h3>Check <%= "#{@check.id}" %></h3>
 
-<% @check.foods.each do |food| %>
-    <%= food.name %>............$<%= food.price %><br>
+<% @check.orders.each do |order| %>
+    <%= order.food.name %>............$<%= order.food.price %> - <%= link_to "Modify?", new_order_modification_path(order.id) %> - <%= link_to 'Remove Item',  order,  method: :delete %><br>
     
 <% end %>
 <br>
