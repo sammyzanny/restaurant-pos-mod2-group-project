@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_232725) do
+ActiveRecord::Schema.define(version: 2020_02_12_213745) do
 
   create_table "checks", force: :cascade do |t|
     t.string "paid_status", default: "unpaid"
