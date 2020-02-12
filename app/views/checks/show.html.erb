@@ -1,9 +1,17 @@
 <h3>Check <%= "#{@check.id}" %></h3>
 
 <% @check.orders.each do |order| %>
-    <%= order.food.name %>............$<%= order.food.price %> - <%= link_to "Modify?", new_order_modification_path(order) %> - <%= link_to 'Remove Item',  order,  method: :delete %><br>
-    
+
+    <%= order.food.name %>............$<%= order.food.price %> - <%= link_to "Modify?", new_order_modification_path(order.id) %> - <%= link_to 'Remove Item',  order,  method: :delete %><br>
+    <% if order.modifications.any? %>
+      <ul>
+      <% order.modifications.each do |m| %>
+        <li><%= m.note %>............$<%= m.price %></li>
+          <% end %>
+      </ul>
+    <% end %>
 <% end %>
+
 <br>
 <br>
 Total............$<%= @check.total %><br><br><br>
