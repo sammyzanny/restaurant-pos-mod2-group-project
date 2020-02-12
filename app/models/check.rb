@@ -18,7 +18,7 @@ class Check < ApplicationRecord
     end
     results
   end
-  
+
   def total
     food_prices = self.foods.map{|food| food.price}
     # mod_prices = self.modifications.map{|mod| mod.price}
@@ -29,6 +29,7 @@ class Check < ApplicationRecord
     #   mod_prices = [0]
     # end
     food_prices.reduce(:+)# + mod_prices.reduce(:+)
+
   end
 
   def tax
@@ -38,4 +39,5 @@ class Check < ApplicationRecord
   
 
   
+
 end

@@ -2,6 +2,7 @@ class Food < ApplicationRecord
     has_many :orders
     has_many :modifications, through: :orders
 
+
    def total_sold
     self.orders.length
    end
@@ -10,6 +11,5 @@ class Food < ApplicationRecord
     self.orders.where(paid_status: 'unpaid').length
    end
 
-   
 
 end
