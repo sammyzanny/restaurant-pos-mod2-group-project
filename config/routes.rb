@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :servers
-  resources :foods do
+  resources :foods
+  resources :orders do
     resources :modifications, only: [:new, :create]
   end
-  resources :orders
   resources :checks
   get '/session_check/:id', to: 'checks#session_check', as: 'session_check'
   get '/add_item/:id', to: 'checks#add_item', as: 'add_item'
