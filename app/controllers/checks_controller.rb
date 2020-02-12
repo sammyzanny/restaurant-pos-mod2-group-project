@@ -26,6 +26,7 @@ class ChecksController < ApplicationController
     def item_added
         set_check
         if params[:food_id]
+            flash[:food_name] = Food.find_by(id: params[:food_id]).name
             @check.foods << Food.find_by(id: params[:food_id])
             @check.save
         end
