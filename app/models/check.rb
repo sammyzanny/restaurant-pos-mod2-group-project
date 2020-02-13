@@ -51,7 +51,4 @@ class Check < ApplicationRecord
     self.save
   end
 
-
-  
-
 end
