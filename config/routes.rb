@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post'/item_added/:id', to: 'checks#item_added', as: 'item_added'
   get '/payment/:id', to: 'checks#payment', as: 'payment'
   get '/refund/:id', to: 'checks#refund', as: 'refund'
+  post '/add_tip/:id', to: 'checks#add_tip', as: 'add_tip'
 
   get '/', to: 'application#hello'
   post '/login', to: 'application#login'
