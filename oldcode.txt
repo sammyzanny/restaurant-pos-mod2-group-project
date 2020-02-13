@@ -1,0 +1,34 @@
+<table class="ui striped table">
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Price</th>
+      <th>Modifications</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.where(food_type: "Appetizer").each do |food| %>
+        <tr>
+            <td><%= food.name %></td>
+            <td><%=number_to_currency(food.price, unit: '$') %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+
+
+
+
+<h3>Check <%= "#{@check.id}" %></h3>
+
+<% @check.orders.each do |order| %>
+
+    <%= order.food.name %>............$<%= order.food.price %> - <%= link_to "Add modification", new_order_modification_path(order.id) %> - <%= link_to 'Remove Item',  order,  method: :delete %><br>
+    <% if order.modifications.any? %>
+      <ul>
+      <% order.modifications.each do |m| %>
+        <li><%= m.note %>............$<%= m.price %> - <%= link_to 'Remove Modifier',  order_modification_path(order, m),  method: :delete %></li>
+          <% end %>
+      </ul>
+    <% end %>
+<% end %>
