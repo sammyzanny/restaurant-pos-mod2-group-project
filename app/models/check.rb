@@ -4,6 +4,15 @@ class Check < ApplicationRecord
   has_many :foods, through: :orders
   has_many :modifications, through: :foods
 
+  
+  def gratuity
+    if self.total > 100
+      @gratuity = self.total*0.2
+    else
+      @gratuity = 0
+    end
+  end
+
   TAX_RATE = 0.09
 
   def food_id=(food_id)
@@ -22,7 +31,6 @@ class Check < ApplicationRecord
   def total
     food_prices = self.foods.map{|food| food.price}
     mod_prices = self.modifications.map{|mod| mod.price}
-
     # if food_prices.reduce(:+) == nil
     #   food_prices = [0]
     # end
@@ -32,7 +40,6 @@ class Check < ApplicationRecord
     
     food_prices.reduce(0.0){|sum, f| sum + f } + mod_prices.reduce(0.0){|sum, m| sum + m}
 
-
   end
 
   def tax
@@ -41,8 +48,9 @@ class Check < ApplicationRecord
   end
 
   def grand_total
-    grand_total = total + tax + self.tip
-    grand_total
+
+    total + tax + self.tip + gratuity
+
   end
 
 
