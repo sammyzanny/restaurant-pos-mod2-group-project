@@ -6,4 +6,11 @@ class Modification < ApplicationRecord
     # most common modification
 
     # 
+
+    def self.search_mods(input)
+        self.all.select do |mod|
+            mod.note.include?(input.downcase)
+        end
+    end
+
 end

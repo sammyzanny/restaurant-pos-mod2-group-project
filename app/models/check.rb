@@ -48,7 +48,9 @@ class Check < ApplicationRecord
   end
 
   def grand_total
+
     total + tax + self.tip + gratuity
+
   end
 
 
