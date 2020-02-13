@@ -17,7 +17,6 @@ class ApplicationController < ActionController::Base
         end
         flash[:no_user_message] = "Invalid PIN"
         redirect_to controller: 'application', action: 'hello'
-
     end
 
     def logout
