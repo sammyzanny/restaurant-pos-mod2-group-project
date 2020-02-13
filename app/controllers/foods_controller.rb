@@ -6,4 +6,6 @@ class FoodsController < ApplicationController
         @foods = Food.all
         @food_type = params[:food_type]
     end
+
+
 end
