@@ -6,7 +6,7 @@ class Food < ApplicationRecord
    def total_sold
     self.orders.length
    end
-
+   
    def current_orders
     self.orders.where(paid_status: 'unpaid').length
    end

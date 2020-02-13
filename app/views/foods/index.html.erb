@@ -56,3 +56,13 @@
     <%= render 'pizza' %>
     <%= render 'dessert' %>
 <% end %>
+
+<h3>Menu Items Sold</h3>
+
+<ul>
+<% @foods.sort_by{|f| -f.total_sold}.each do |food| %>
+<li>
+    <%= food.name %> - <%= food.total_sold %>
+</li>
+<% end %>
+</ul>
