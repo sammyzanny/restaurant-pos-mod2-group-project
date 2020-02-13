@@ -47,12 +47,12 @@ class Check < ApplicationRecord
 
 
   def pay_check
-    self.paid_status = "paid"
+    self.paid_status = "Paid"
     self.save
   end
 
   def refund_check
-    self.paid_status = "refunded"
+    self.paid_status = "Refunded"
     self.save
   end
 

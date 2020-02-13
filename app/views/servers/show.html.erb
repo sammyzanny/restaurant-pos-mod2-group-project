@@ -1,10 +1,14 @@
-<h1>Hi <%= @server.name %>, here are your current tables:</h1> <br>
+<h1>Hi, <%= @server.name %>! Here are your current tables:</h1> <br>
+<ul>
     <% @server.checks.each do |check| %>
-    <p><%=link_to "#{check.id} - #{check.paid_status}", check_path(check) %><p>
+    <li>
+        <p><%=link_to "#{check.id} - #{check.paid_status}", check_path(check) %><p>
+    </li>
 <% end %>
+</ul>
 <br>
 <h2><%=link_to "New Table", checks_path, method: :post%></h2>
-<%= link_to "Menu", foods_path %>
+<h2><%= link_to "View Menu", foods_path %></h2>
 <br><br>
 <%=link_to "Sign Out", logout_path  %>
 

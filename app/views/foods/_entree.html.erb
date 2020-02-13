@@ -2,7 +2,8 @@
 <ul>
 <% @foods.where(food_type: "Entree").each do |entree|  %>
 <li>
-    <%= entree.name %> - $<%= entree.price %><br><br>
+    <%= entree.name %> - $<%= entree.price %> -
+    <%= link_to 'Remove Item', entree,  method: :delete %><br><br>
 </li>
 <% end %>
 </ul>

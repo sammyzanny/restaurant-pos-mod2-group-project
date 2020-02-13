@@ -1,0 +1,14 @@
+<h3>Add A New Menu Item</h3>
+
+<%= form_for @food do |f| %>
+  <label>Food Name:</label><br>
+  <%= f.text_field :name %><br><br>
+
+  <label>Price:</label><br>
+  <%= f.text_field :price %><br><br>
+
+  <label>Food Type:</label><br>
+  <%= f.select :food_type, options_for_select(["Appetizer", "Pasta", "Entree", "Pizza", "Dessert"]) %><br><br>
+
+  <%= f.submit "Add Item" %>
+<% end %>
