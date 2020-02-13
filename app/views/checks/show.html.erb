@@ -31,16 +31,16 @@
 
 <br>
 <br>
-Total............$<%= @check.total %><br>
-Tax..............$<%= @check.tax %><br>
+Total............<%= number_to_currency(@check.total) %><br>
+Tax..............<%= number_to_currency(@check.tax) %><br>
 
 <%= form_tag add_tip_path do%>
-<%= label_tag "Tip............$" %>
-<%= text_field_tag "check[tip]", @check.tip %>
+<%= label_tag "Tip............" %>
+<%= text_field_tag "check[tip]", number_to_currency(@check.tip) %>
 <%= submit_tag "Save Tip" %>
 <% end %>
 
-Grand Total......$<%= @check.grand_total %>
+Grand Total......<%= number_to_currency(@check.grand_total) %>
 
 
 <br><br>
