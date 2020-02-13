@@ -31,10 +31,17 @@
 <% end %>
 
 <%= form_tag foods_path, method: :get do %>
+    <%= hidden_field_tag :food_type, "all" %>
     <%= submit_tag "All Menu Items" %>
 <% end %>
 
-<a href='/'><button>Exit Menu</button></a>
+<% if @food_type %>
+    <%= form_tag foods_path, method: :get do %>
+        <%= submit_tag "Hide Menu" %>
+    <% end %> 
+<% end %><br>
+
+<a href='/'><button class="ui button">Exit Menu</button></a>
 
 <h3>Menu Items</h3>
 
@@ -49,7 +56,7 @@
     <%= render 'pizza' %>
 <% when 'dessert' %>
     <%= render 'dessert' %>
-<% else %>
+<% when 'all' %>
     <%= render 'appetizer' %>
     <%= render 'pasta' %>
     <%= render 'entree' %>
@@ -59,10 +66,21 @@
 
 <h3>Menu Items Sold</h3>
 
-<ul>
-<% @foods.sort_by{|f| -f.total_sold}.each do |food| %>
-<li>
-    <%= food.name %> - <%= food.total_sold %>
-</li>
-<% end %>
-</ul>
+<table class="ui striped table">
+    <thead>
+      <tr>
+        <th>Food Item</th>
+        <th>Food Price</th>
+        <th>Order Count</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% @foods.sort_by{|f| -f.total_sold}.each do |food| %>
+          <tr>
+              <td><%= food.name %></td>
+              <td><%= number_to_currency(food.price, unit: '$') %></td>
+              <td><%= food.total_sold %></td>
+          </tr>
+      <% end %>
+      </tbody>
+  </table>
