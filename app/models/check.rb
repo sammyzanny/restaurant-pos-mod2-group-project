@@ -4,7 +4,7 @@ class Check < ApplicationRecord
   has_many :foods, through: :orders
   has_many :modifications, through: :foods
 
-  @tax_rate = 0.9 
+  TAX_RATE = 0.09
 
   def food_id=(food_id)
     food = Food.find_by(id: food_id)
@@ -34,14 +34,15 @@ class Check < ApplicationRecord
   end
 
   def tax
-    @tax_rate*total
+    total_tax = TAX_RATE*total
+    total_tax.round(2)
   end
 
-  def total_after_tax
-    total += tax
+  def grand_total
+    total + tax + self.tip
   end
 
-  
+
   def pay_check
     self.paid_status = "paid"
     self.save
@@ -53,7 +54,7 @@ class Check < ApplicationRecord
     self.save
   end
 
-
-  
-
+  def set_tip(amount)
+    self.tip = amount
+  end
 end

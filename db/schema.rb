@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_232725) do
+ActiveRecord::Schema.define(version: 2020_02_12_224613) do
 
   create_table "checks", force: :cascade do |t|
     t.string "paid_status", default: "unpaid"
     t.integer "server_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "tip", precision: 8, scale: 2
     t.index ["server_id"], name: "index_checks_on_server_id"
   end
 
