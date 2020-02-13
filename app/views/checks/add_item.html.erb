@@ -38,6 +38,9 @@
 <br>
 <h1>Menu Items</h1>
 
+<% if flash[:food_name] %>
+    <%= "#{flash[:food_name]} added to check" %>
+<% end %>
 
 
 <% case @food_type %>
