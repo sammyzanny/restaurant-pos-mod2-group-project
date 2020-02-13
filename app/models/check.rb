@@ -4,6 +4,15 @@ class Check < ApplicationRecord
   has_many :foods, through: :orders
   has_many :modifications, through: :foods
 
+  
+  def gratuity
+    if self.total > 100
+      @gratuity = self.total*0.2
+    else
+      @gratuity = 0
+    end
+  end
+
   TAX_RATE = 0.09
 
   def food_id=(food_id)
@@ -31,8 +40,9 @@ class Check < ApplicationRecord
   end
 
   def grand_total
-    grand_total = total + tax + self.tip
-    grand_total
+
+    total + tax + self.tip + gratuity
+
   end
 
 

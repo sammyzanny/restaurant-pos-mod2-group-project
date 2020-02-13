@@ -31,8 +31,13 @@
 
 <br>
 <br>
+
 Total............<%= number_to_currency(@check.total) %><br>
 Tax..............<%= number_to_currency(@check.tax) %><br>
+
+<% if @check.gratuity > 0 %>
+  Gratuity.........$<%= @check.gratuity %><br>
+<% end %>
 
 <%= form_tag add_tip_path do%>
 <%= label_tag "Tip............" %>
