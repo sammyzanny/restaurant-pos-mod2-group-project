@@ -22,17 +22,7 @@ class Check < ApplicationRecord
   def total
     food_prices = self.foods.map{|food| food.price}
     mod_prices = self.modifications.map{|mod| mod.price}
-
-    # if food_prices.reduce(:+) == nil
-    #   food_prices = [0]
-    # end
-    #  if mod_prices.reduce(:+) == nil
-    #    mod_prices = [0]
-    #  end
-    
     food_prices.reduce(0.0){|sum, f| sum + f } + mod_prices.reduce(0.0){|sum, m| sum + m}
-
-
   end
 
   def tax
@@ -49,7 +39,6 @@ class Check < ApplicationRecord
   def pay_check
     self.paid_status = "paid"
     self.save
-    # byebug
   end
 
   def refund_check
