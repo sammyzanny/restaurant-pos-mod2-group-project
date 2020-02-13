@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :servers
-  resources :foods, only: [:index, :new, :create]
+  resources :foods, only: [:index, :new, :create, :destroy]
 
   resources :orders do
     resources :modifications, only: [:new, :create, :index, :show, :destroy]

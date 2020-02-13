@@ -2,7 +2,8 @@
 <ul>
     <% @foods.where(food_type: "Appetizer").each do |appetizer|  %>
         <li>
-            <%= appetizer.name %> - <%=number_to_currency(appetizer.price, unit: '$') %><br><br>
+            <%= appetizer.name %> - <%=number_to_currency(appetizer.price, unit: '$') %> -
+            <%= link_to 'Remove Item',  appetizer,  method: :delete %><br><br>
         </li>
     <% end %>
 </ul>

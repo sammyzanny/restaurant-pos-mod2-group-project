@@ -50,14 +50,14 @@ Grand Total......<%= number_to_currency(@check.grand_total) %>
 
 <br><br>
 
-<a href=<%=add_item_path(@check)%>><button class="ui button">Add/Change Items</button></a><br><br>
+<a href=<%=add_item_path(@check)%>><button class="ui button">Add Items</button></a><br><br>
 
 <a href=<%=server_path(@check.server)%>><button class="ui button" >Back to your Checks</button></a>                          
 
 
 
 
-<% if @check.paid_status != "paid" %>
+<% if @check.paid_status != "Paid" %>
    <h1 align="center"><a href=<%=payment_path(@check)%>><button style="font-size : 25px;">Pay Check</button></a></h1>
     <%# link_to "Pay Check", payment_path(@check) %>
 <% else %>

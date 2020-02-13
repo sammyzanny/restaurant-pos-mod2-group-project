@@ -8,7 +8,7 @@ class Food < ApplicationRecord
    end
    
    def current_orders
-    self.orders.where(paid_status: 'unpaid').length
+    self.orders.where(paid_status: 'Unpaid').length
    end
 
 end
