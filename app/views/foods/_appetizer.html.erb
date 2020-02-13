@@ -1,8 +1,13 @@
 <h4>Appetizers</h4>
 <ul>
-<% @foods.where(food_type: "Appetizer").each do |appetizer|  %>
-<li>
-    <%= appetizer.name %> - <%=number_to_currency(appetizer.price, unit: '$') %><br><br>
-</li>
-<% end %>
+    <% @foods.where(food_type: "Appetizer").each do |appetizer|  %>
+        <li>
+            <%= appetizer.name %> - <%=number_to_currency(appetizer.price, unit: '$') %><br><br>
+        </li>
+    <% end %>
 </ul>
+
+
+
+
+  
