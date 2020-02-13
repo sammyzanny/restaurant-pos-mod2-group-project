@@ -1,6 +1,5 @@
 <h3>Check <%= "#{@check.id}" %></h3>
 
-
 <table class="ui striped table">
   <thead>
     <tr>
@@ -25,7 +24,6 @@
               <% end %>
             </td>
         </tr>
-
     <% end %>
     </tbody>
 </table>
@@ -35,6 +33,9 @@
 <br>
 Total............$<%= @check.total %><br>
 Tax..............$<%= @check.tax %><br>
+<% if @check.gratuity > 0 %>
+  Gratuity.........$<%= @check.gratuity %><br>
+<% end %>
 
 <%= form_tag add_tip_path do%>
 <%= label_tag "Tip............$" %>
@@ -44,10 +45,13 @@ Tax..............$<%= @check.tax %><br>
 
 Grand Total......$<%= @check.grand_total %>
 
+
 <br><br>
+
 <a href=<%=add_item_path(@check)%>><button class="ui button">Add/Change Items</button></a><br><br>
 
 <a href=<%=server_path(@check.server)%>><button class="ui button" >Back to your Checks</button></a>                          
+
 
 
 
