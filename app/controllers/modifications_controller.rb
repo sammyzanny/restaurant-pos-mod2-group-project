@@ -14,6 +14,7 @@ class ModificationsController < ApplicationController
 
   def create
     @modification = Modification.new(modification_params)
+    @modification.note = params[:modification][:note].downcase
     @modification.save
     redirect_to check_path(@modification.check)
   end
