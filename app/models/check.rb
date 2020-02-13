@@ -51,7 +51,8 @@ class Check < ApplicationRecord
     self.save
   end
 
-
-  
+  def set_tip(amount)
+    self.tip = amount
+  end
 
 end

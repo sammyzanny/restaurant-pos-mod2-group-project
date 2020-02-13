@@ -59,6 +59,13 @@ class ChecksController < ApplicationController
         redirect_to check_path(@check)
     end
 
+    def add_tip
+        set_check
+        @check.set_tip(params[:check][:tip])
+        @check.save
+        redirect_to check_path(@check)
+    end
+
     private
 
     def set_check
