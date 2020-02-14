@@ -5,7 +5,15 @@
 
 body {
     margin: 35px;
-    background-color: white;
+    background-color: BlanchedAlmond;
+}
+
+.server-image {
+    float: right;
+    width: 500px;
+    margin-right: 105px;
+    border: 5px solid black;
+    padding: 5px;
 }
 
 p {
@@ -19,12 +27,12 @@ h1 {
   font-family: Lucida;
   font-size: 30px;
   font-color: black;
-  text-align: center;
+  text-align: left;
 }
 
 h2 {
   font-family: Lucida;
-  font-size: 30px;
+  font-size: 25px;
   font-color: black;
 }
 
@@ -40,16 +48,7 @@ table {
 }
 
 tr {
-  text-align: left;
-  margin: 30px;
+    text-align: left;
+    margin: 30px;
 }
 
-ui-button {
-
-}
-
-// ul {
-//   list-style-type: none;
-//   margin: 0;
-//   padding: 0;
-// }
