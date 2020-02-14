@@ -61,7 +61,14 @@ class ChecksController < ApplicationController
 
     def add_tip
         set_check
-        @check.set_tip(params[:check][:tip])
+        tip = params[:check][:tip]
+        if tip[0] == '$'
+            tip[0] = ""
+        end
+        if tip[1] == ","
+            tip[1] = ""
+        end
+        @check.set_tip(tip)
         @check.save
         redirect_to check_path(@check)
     end

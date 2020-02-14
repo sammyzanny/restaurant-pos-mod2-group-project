@@ -3,7 +3,17 @@
 <%= form_tag order_modifications_path do %>
   <%= hidden_field_tag "modification[order_id]", params[:order_id] %>
   <%= label_tag "note", "Note"%>
-  <%= text_field_tag "modification[note]", @modification.note %>
-    <%= select_tag "modification[price]", options_for_select(@mod_prices, 0) %>
+  <%= text_field_tag "modification[note]", @modification.note, list: "mods" %>
+  <% if Modification.count > 5 %>
+  <datalist id="mods">
+    <option value="<%=Modification.most_common_modification[0][0].to_s%>">
+    <option value="<%=Modification.most_common_modification[1][0].to_s%>">
+    <option value="<%=Modification.most_common_modification[2][0].to_s%>">
+    <option value="<%=Modification.most_common_modification[3][0].to_s%>">
+    <option value="<%=Modification.most_common_modification[4][0].to_s%>">
+  </datalist>
+  <% end %>
+  
+  <%= select_tag "modification[price]", options_for_select(@mod_prices, 0) %>
   <%= submit_tag "Add Modification" %>
 <% end %>
