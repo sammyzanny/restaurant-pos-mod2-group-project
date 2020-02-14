@@ -2,8 +2,8 @@
 <ul>
 <% @foods.where(food_type: "Pasta").each do |pasta|  %>
 <li>
-    <%= pasta.name %> - $<%= pasta.price %> -
-    <%= link_to 'Remove Item', pasta,  method: :delete %><br><br>
+    <%= pasta.name %> - $<%= pasta.price %>
+    <%= button_to 'Remove Item', pasta,  method: :delete, form: {style: 'display:inline-block;'} %><br><br>
 </li>
 <% end %>
 </ul>

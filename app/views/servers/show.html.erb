@@ -2,7 +2,7 @@
 <ul>
     <% @server.checks.each do |check| %>
     <li>
-        <p><%=link_to "#{check.id} - #{check.paid_status}", check_path(check) %><p>
+        <p><%=link_to "#{check.id} - #{check.paid_status.capitalize}", check_path(check) %><p>
     </li>
 <% end %>
 </ul>

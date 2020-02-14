@@ -2,8 +2,8 @@
 <ul>
 <% @foods.where(food_type: "Dessert").each do |dessert|  %>
 <li>
-    <%= dessert.name %> - $<%= dessert.price %> - 
-    <%= link_to 'Remove Item', dessert,  method: :delete %><br><br>
+    <%= dessert.name %> - $<%= dessert.price %>
+    <%= button_to 'Remove Item', dessert,  method: :delete, form: {style: 'display:inline-block;'} %><br><br>
 </li>
 <% end %>
 </ul>
