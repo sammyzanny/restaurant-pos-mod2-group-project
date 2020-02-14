@@ -5,5 +5,51 @@
 
 body {
     margin: 35px;
-    background-color: LightBlue;
+    background-color: white;
 }
+
+p {
+  font-family: Lucida;
+  font-size: 15px;
+  font-color: black;
+  font-style: normal;
+}
+
+h1 {
+  font-family: Lucida;
+  font-size: 30px;
+  font-color: black;
+  text-align: center;
+}
+
+h2 {
+  font-family: Lucida;
+  font-size: 30px;
+  font-color: black;
+}
+
+h3 {
+  font-family: Lucida;
+  font-size: 20px;
+  font-color: black;
+}
+
+table {
+  font-size: 20px;
+  font-family: Lucida;
+}
+
+tr {
+  text-align: left;
+  margin: 30px;
+}
+
+ui-button {
+
+}
+
+// ul {
+//   list-style-type: none;
+//   margin: 0;
+//   padding: 0;
+// }

@@ -1,5 +1,11 @@
 <h3>Add A New Menu Item</h3>
 
+<% if @errors %>
+  <% @errors.each do |error| %>
+  <%= error %><br>
+  <% end %>
+<% end %>
+
 <%= form_for @food do |f| %>
   <label>Food Name:</label><br>
   <%= f.text_field :name %><br><br>
