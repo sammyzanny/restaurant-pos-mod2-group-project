@@ -4,7 +4,7 @@
   <%= hidden_field_tag "modification[order_id]", params[:order_id] %>
   <%= label_tag "note", "Note"%>
   <%= text_field_tag "modification[note]", @modification.note, list: "mods" %>
-  <% if Modification.count > 5 %>
+  <% if Modification.most_common_modification[4] %>
   <datalist id="mods">
     <option value="<%=Modification.most_common_modification[0][0].to_s%>">
     <option value="<%=Modification.most_common_modification[1][0].to_s%>">
