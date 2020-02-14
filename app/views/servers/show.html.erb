@@ -1,31 +1,29 @@
-<h1>Hi, <%= @server.name %>! Here are your current tables:</h1> <br>
+<h1>Hi, <%= @server.name %>! <% if @server.open_checks.any? %> Here are your current tables: <%else%> You currently have no tables to attend to  <% end %></h1> <br>
 <ul>
-    <% i = 1 %>
     <% @server.open_checks.each do |check| %>
     <li>
         <h3><%=link_to "Ticket #{check.id}.", check_path(check) %></h3>
     </li>
-        <% i += 1 %>
     <% end %>
 </ul>
-<h2> Closed Checks </h2>
+<% if @server.closed_checks.any? %>
+    <h2> Closed Checks </h2>
+<% end %>
 <ul>
-    <% i = 1 %>
     <% @server.closed_checks.each do |check| %>
     <li>
         <h3><%=link_to "Check #{check.id}.", check_path(check) %></h3>
     </li>
-        <% i += 1 %>
     <% end %>
 </ul>
-<h2> Dirty Free Loaders </h2>
+<% if @server.cheapskates.any? %>
+    <h2> Dirty Free Loaders </h2>
+<% end %>
 <ul>
-    <% i = 1 %>
     <% @server.cheapskates.each do |check| %>
     <li>
         <h3><%=link_to "Cheapskate #{check.id}.", check_path(check) %></h3>
     </li>
-        <% i += 1 %>
     <% end %>
 </ul>
 <br>
