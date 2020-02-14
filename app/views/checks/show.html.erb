@@ -1,4 +1,4 @@
-<h3>Check <%= "#{@check.id}" %></h3>
+<h3><% if @check.paid_status == "unpaid" %>Ticket <% else %>Check <% end %><%= "#{@check.id}" %></h3>
 
 <table class="ui striped table">
   <thead>
@@ -57,7 +57,7 @@ Grand Total......<%= number_to_currency(@check.grand_total) %>
 
 
 
-<% if @check.paid_status != "paid" %>
+<% if @check.paid_status != "Paid" %>
    <h1 align="center"><a href=<%=payment_path(@check)%>><button style="font-size : 25px;">Pay Check</button></a></h1>
     <%# link_to "Pay Check", payment_path(@check) %>
 <% else %>

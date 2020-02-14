@@ -9,7 +9,7 @@ class Server < ApplicationRecord
     end
 
     def closed_checks
-        self.checks.where(paid_status: "paid")
+        self.checks.where(paid_status: "Paid")
     end
 
     def cheapskates
