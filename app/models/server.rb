@@ -13,7 +13,7 @@ class Server < ApplicationRecord
     end
 
     def cheapskates
-        self.checks.where(paid_status: "refunded")
+        self.checks.where(paid_status: "Refunded")
     end
 
     
