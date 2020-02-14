@@ -9,14 +9,19 @@ class FoodsController < ApplicationController
 
     def new
         @food = Food.new
+        @errors = flash[:errors]
     end
 
     def create
         @food = Food.new(food_params)
-        @food.save
-        redirect_to foods_path
+          if @food.save
+            redirect_to foods_path
+          else
+            flash[:errors] = @food.errors.full_messages
+            redirect_to new_food_path
+          end
     end
-    
+
     def destroy
         Food.find(params[:id]).destroy
         redirect_to foods_path

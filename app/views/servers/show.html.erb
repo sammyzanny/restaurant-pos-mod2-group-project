@@ -1,8 +1,12 @@
+
 <h1>Hi, <%= @server.name %>! <% if @server.open_checks.any? %> Here are your current tables: <%else%> You currently have no tables to attend to  <% end %></h1> <br>
+
+<%= image_tag("lets_eat.jpg", class: "server-image") %>
+
 <ul>
     <% @server.open_checks.each do |check| %>
     <li>
-        <h3><%=link_to "Ticket #{check.id}.", check_path(check) %></h3>
+        <h3><%=link_to "Ticket #{check.id}", check_path(check) %></h3>
     </li>
     <% end %>
 </ul>
@@ -12,23 +16,27 @@
 <ul>
     <% @server.closed_checks.each do |check| %>
     <li>
-        <h3><%=link_to "Check #{check.id}.", check_path(check) %></h3>
+        <h3><%=link_to "Check #{check.id}", check_path(check) %></h3>
     </li>
     <% end %>
 </ul>
 <% if @server.cheapskates.any? %>
-    <h2> Dirty Free Loaders </h2>
+    <h2> Refunded Checks </h2>
 <% end %>
 <ul>
     <% @server.cheapskates.each do |check| %>
     <li>
-        <h3><%=link_to "Cheapskate #{check.id}.", check_path(check) %></h3>
+
+        <h3><%=link_to "Check #{check.id}", check_path(check) %></h3>
+
     </li>
     <% end %>
 </ul>
 <br>
+
 <h2><button class="ui button"><%=link_to "New Table", checks_path, method: :post%></button></h2>
 <h2><button class="ui button"><%= link_to "View Menu", foods_path %></button></h2>
 <br><br>
-<%=link_to "Sign Out", logout_path  %>
+
+<%=link_to "Sign Out", logout_path  %><br>
 
