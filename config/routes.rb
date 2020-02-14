@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  resources :servers
-  resources :foods
+  resources :servers, only: [:new, :create, :show]
+  resources :foods, only: [:index]
 
-  resources :orders do
+  resources :orders, only: [:show, :destroy] do
     resources :modifications, only: [:new, :create, :index, :show, :destroy]
   end
-  
-  resources :checks
+
+  resources :checks, only: [:show, :index, :create, :edit]
   get '/session_check/:id', to: 'checks#session_check', as: 'session_check'
   get '/add_item/:id', to: 'checks#add_item', as: 'add_item'
   post'/item_added/:id', to: 'checks#item_added', as: 'item_added'

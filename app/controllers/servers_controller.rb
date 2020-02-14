@@ -4,7 +4,7 @@ class ServersController < ApplicationController
         @server = Server.new
     end
 
-    def create 
+    def create
         @server = Server.new(server_params)
         if @server.valid?
             @server.save
@@ -21,9 +21,10 @@ class ServersController < ApplicationController
         @server = Server.find(params[:id])
     end
 
-
+    private
+    
     def server_params
         params.require(:server).permit(:name, :pin)
     end
-        
+
 end
