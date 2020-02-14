@@ -1,14 +1,36 @@
 <h1>Hi, <%= @server.name %>! Here are your current tables:</h1> <br>
 <ul>
-    <% @server.checks.each do |check| %>
+    <% i = 1 %>
+    <% @server.open_checks.each do |check| %>
     <li>
-        <p><%=link_to "#{check.id} - #{check.paid_status}", check_path(check) %><p>
+        <h3><%=link_to "Ticket #{check.id}.", check_path(check) %></h3>
     </li>
-<% end %>
+        <% i += 1 %>
+    <% end %>
+</ul>
+<h2> Closed Checks </h2>
+<ul>
+    <% i = 1 %>
+    <% @server.closed_checks.each do |check| %>
+    <li>
+        <h3><%=link_to "Check #{check.id}.", check_path(check) %></h3>
+    </li>
+        <% i += 1 %>
+    <% end %>
+</ul>
+<h2> Dirty Free Loaders </h2>
+<ul>
+    <% i = 1 %>
+    <% @server.cheapskates.each do |check| %>
+    <li>
+        <h3><%=link_to "Cheapskate #{check.id}.", check_path(check) %></h3>
+    </li>
+        <% i += 1 %>
+    <% end %>
 </ul>
 <br>
-<h2><%=link_to "New Table", checks_path, method: :post%></h2>
-<h2><%= link_to "View Menu", foods_path %></h2>
+<h2><button class="ui button"><%=link_to "New Table", checks_path, method: :post%></button></h2>
+<h2><button class="ui button"><%= link_to "View Menu", foods_path %></button></h2>
 <br><br>
 <%=link_to "Sign Out", logout_path  %>
 
