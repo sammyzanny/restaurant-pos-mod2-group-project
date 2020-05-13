@@ -36,7 +36,7 @@ There is a default account provided in the seed file to login without signing up
 Given more time to come back to this, icebox things to experiment with adding are:
 
 1. Add admin functionality to menu editing and refunding checks
-2. Implrement a payment processor
+2. Implement a payment processor
 
 ### Authors
 
