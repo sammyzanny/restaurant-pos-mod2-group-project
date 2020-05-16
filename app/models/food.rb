@@ -13,4 +13,5 @@ class Food < ApplicationRecord
     self.orders.where(paid_status: 'Unpaid').length
    end
 
+
 end
