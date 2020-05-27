@@ -40,4 +40,4 @@ Given more time to come back to this, icebox things to experiment with adding ar
 
 ### Authors
 
-Sam Zandi, Zach Weber ([@zwt17](https://github.com/zwt17), Lindsay Mecher ([@lindsayMecher](https://github.com/lindsayMecher)), Matthew Gizzi ([@m-gizzi](https://github.com/m-gizzi)
+Sam Zandi, Zach Weber ([@zwt17](https://github.com/zwt17)), Lindsay Mecher ([@lindsayMecher](https://github.com/lindsayMecher)), Matthew Gizzi ([@m-gizzi](https://github.com/m-gizzi)
