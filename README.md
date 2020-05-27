@@ -2,11 +2,11 @@
 
 Quick links:
 
-Demo: 
+Demo: https://www.youtube.com/watch?v=MVSDirXckN0
 
 __________________________________________
 
-Orderli is a simple Rails based restaurant point-of-sale (POS) system.  It has some basic login functionality using cookies, as well as the ability to track orders, calculate totals and purchase numbers, and track paid orders vs. open and refunded.
+Orderli is a simple Rails based restaurant point-of-sale (POS) system.  It has some basic login functionality using session cookies, as well as the ability to track orders, calculate totals and purchase numbers, and track paid orders vs. open and refunded.
 
 ### Prerequisites
 
@@ -35,9 +35,9 @@ There is a default account provided in the seed file to login without signing up
 
 Given more time to come back to this, icebox things to experiment with adding are:
 
-1. Add admin functionality to menu editing and refunding checks
+1. Add admin/manager functionality to menu editing and refunding checks
 2. Implement a payment processor
 
 ### Authors
 
-Zach Weber, Lindsay Mecher ([@lindsayMecher](https://github.com/lindsayMecher)), Matthew Gizzi ([@m-gizzi](https://github.com/m-gizzi)), Sam Zandi ([@sammyzandi](https://github.com/sammyzanny))
+Sam Zandi, Zach Weber ([@zwt17](https://github.com/zwt17), Lindsay Mecher ([@lindsayMecher](https://github.com/lindsayMecher)), Matthew Gizzi ([@m-gizzi](https://github.com/m-gizzi)
