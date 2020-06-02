@@ -5,6 +5,7 @@
 Demo: https://www.youtube.com/watch?v=MVSDirXckN0
 
 __________________________________________
+![Demo Gif](https://github.com/sammyzanny/restaurant-pos-mod2-group-project/blob/master/app/assets/images/Orderli.gif&raw=true)
 
 Orderli is a simple Rails based restaurant point-of-sale (POS) system.  It has some basic login functionality using session cookies, as well as the ability to track orders, calculate totals and purchase numbers, and track paid orders vs. open and refunded.
 
